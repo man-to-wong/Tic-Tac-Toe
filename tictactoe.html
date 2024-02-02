@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe!</title>
+    <link rel="stylesheet" type="text/css" href="styles.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Rubik:wght@500&display=swap" rel="stylesheet">    
+</head>
+<body>
+    <div id="menu">
+        <h1>Tic-Tac-Toe</h1>
+        <button id= 'startButton' onclick="showBoard()">Spiel starten</button>
+    </div>
+
+
+    <div id="spielFeld">
+        <div id="oben" class = 'reihe'>
+            <div id='obenLinks' onclick ='executeTurn(this)' class="feld"  data-mark='unchecked'></div>
+            <div id='obenMitte' onclick ='executeTurn(this)' class="feld"  data-mark='unchecked'></div>
+            <div id='obenRechts' onclick ='executeTurn(this)' class="feld" data-mark='unchecked'></div>
+        </div>
+        <div id="mitte" class = 'reihe'>
+            <div id='mitteLinks' onclick ='executeTurn(this)' class="feld" data-mark='unchecked'></div>
+            <div id='mitteMitte' onclick ='executeTurn(this)' class="feld" data-mark='unchecked'></div>
+            <div id='mitteRechts' onclick ='executeTurn(this)' class="feld"  data-mark='unchecked'></div>
+        </div>
+        <div id="unten" class = 'reihe'>
+            <div id='untenLinks' onclick ='executeTurn(this)' class="feld"  data-mark='unchecked'></div>
+            <div id='untenMitte' onclick ='executeTurn(this)' class="feld"  data-mark='unchecked'></div>
+            <div id='untenRechts' onclick ='executeTurn(this)' class="feld"  data-mark='unchecked'></div>
+        </div>  
+    </div>
+    <script src="tictactoe.js"></script>
+</body>
+</html>
