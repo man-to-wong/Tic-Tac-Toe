@@ -60,9 +60,7 @@ function showTurnText() {
 
 function refreshTurnText() {
     let garbage = document.querySelector('#turnText');
-    if (garbage) {
         garbage.remove();
-    }
     showTurnText();
 }
 
@@ -86,6 +84,7 @@ function executeTurn(field) {
     };
     turn = checkTurn();
 
+
     switch (turn) {
         case true: //player 1
             setMark(field, x);
@@ -96,9 +95,12 @@ function executeTurn(field) {
             field.style.color = 'red';
             break;
     }
-    setTimeout(() => { checkWin(field.dataset.mark); }, 1000);
+    setTimeout(() => { checkGameState(field.dataset.mark); }, 1000);
     ++turnCount;
+
+    if(turnCount < 10) {
     refreshTurnText();
+    }
 }
 
 function checkTurn() {
@@ -122,7 +124,7 @@ function setMark(field, mark) {
     }
 }
 
-function checkWin(mark) {
+function checkGameState(mark) {
     for (let i = 0; i < fieldArray.length; i++) {
         console.log('fieldArray[' + i + ']: ' + fieldArray[i].dataset.mark);
     }
@@ -148,6 +150,12 @@ function checkWin(mark) {
                 console.log('game ist over')
                 break;
         }
+    }
+    else if(turnCount == 10){
+       turnText = document.querySelector('#turnText');
+       turnText.textContent = 'Unentschieden!';
+       over = true;
+    
     }
     else {
         return;
